@@ -118,6 +118,9 @@ if __name__ == "__main__":
 
     train_fold, test_fold = get_folds(ex)
     ex_path = "logs/ex" + str(ex)
+    # ensure output dirs exist
+    os.makedirs(ex_path,        exist_ok=True)
+    os.makedirs(os.path.join(ex_path, 'models'), exist_ok=True)
     log_path = ex_path + "/logs.txt"
 
     # delete the logs of the last training
